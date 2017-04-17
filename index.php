@@ -23,7 +23,7 @@
     <form action="#" method="post">
         <input type="text" name="username" onblur="validate(this)"  placeholder="Enter username"><br>
         <input type="password" name="password" onblur="validate(this)"  placeholder="Enter password"><br>
-        <input type="submit" name="log_submit" value="LOGIN">
+        <input type="submit" name="log_submit" placeholder="LOGIN">
         <?php
                 if (isset($_POST['log_submit'])) {
                if ( !empty($_POST['username']) && !empty($_POST['password'])) {
