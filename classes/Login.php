@@ -8,10 +8,11 @@ class Login
         $password = md5($_POST['password']);
         try{
             Database::$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $login_res = Database::$connection->prepare("SELECT * FROM korisnici");
-        $login_res->bindParam(":username", $username);
-        $login_res->bindParam(":password", $password);
-        $login_res->execute();
+            Database::$connection->setAttribute(PDO::ATTR_EMULATE_PREPARES, TRUE);
+             $login_res = Database::$connection->prepare("SELECT * FROM korisnici");
+             $login_res->bindParam(":username", $username);
+             $login_res->bindParam(":password", $password);
+             $login_res->execute();
         while ($rw_log = $login_res->fetchObject('Cookies')) {
             if ($rw_log->username == $username && $rw_log->password == $password) {
                 $rw_log->setCookies();
