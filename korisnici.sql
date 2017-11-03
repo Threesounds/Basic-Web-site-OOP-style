@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 17, 2017 at 10:57 PM
+-- Generation Time: Nov 03, 2017 at 12:51 PM
 -- Server version: 5.7.14
--- PHP Version: 5.6.25
+-- PHP Version: 7.0.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -60,7 +60,11 @@ INSERT INTO `komentari` (`id`, `comment_name`, `comment`, `login`, `blog_id`) VA
 (1035, 'Trifun', 'Slažete li se samnom?', '14', 3),
 (1036, 'Brat', 'E brate na pogrešnom si mestu!', '13', 2),
 (1037, 'Brat', 'Super, odnesite industriju odavde i možemo i mi da se selimo, osim Aviva skoro ništa drugo i ne radi!', '13', 3),
-(1038, 'Danilo', 'U proleće je to posebno lepo mesto, šetnja kraj Tamiša, narodna bašta, ma milina.', '16', 2);
+(1038, 'Danilo', 'U proleće je to posebno lepo mesto, šetnja kraj Tamiša, narodna bašta, ma milina.', '16', 2),
+(1039, 'Dzej', 'Mene zanima samo zelena pijaca', '17', 2),
+(1041, 'tara', 'tara', '17', 2),
+(1048, 'tara', 'fff', '17', 2),
+(1050, 'dd', 'dd', '17', 2);
 
 -- --------------------------------------------------------
 
@@ -80,11 +84,7 @@ CREATE TABLE `korisnici` (
 --
 
 INSERT INTO `korisnici` (`id`, `username`, `password`, `email`) VALUES
-(12, 'malina', 'malina1234', 'malina@gmail.com'),
-(13, 'Brat', 'brat1234', 'brat@gmail.com'),
-(14, 'Trifun', 'trifun1234', 'trifun@gmail.com'),
-(15, 'teÅ¡ki sluÄaj', 'teski1234', 'teski@gmail.com'),
-(16, 'Danilo', 'danilo1234', 'danilo@gmail.com');
+(21, 'Little', 'eba4820c4a707c3c72d16050177423b6', 'little@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -139,12 +139,12 @@ ALTER TABLE `tekst`
 -- AUTO_INCREMENT for table `komentari`
 --
 ALTER TABLE `komentari`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1040;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1051;
 --
 -- AUTO_INCREMENT for table `korisnici`
 --
 ALTER TABLE `korisnici`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 --
 -- AUTO_INCREMENT for table `tekst`
 --
