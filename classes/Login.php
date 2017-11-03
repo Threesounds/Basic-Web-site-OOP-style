@@ -5,7 +5,7 @@ class Login
     public function login_user() 
     {
         $username = $_POST['username'];
-        $password = $_POST['password'];
+        $password = md5($_POST['password']);
         try{
             Database::$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $login_res = Database::$connection->prepare("SELECT * FROM korisnici");
