@@ -17,7 +17,7 @@ class Add_comments
         $addRes->bindParam(":login", $login);
         $addRes->bindParam(":blog_id", $blog_id);
         $addRes->execute();
-        echo "Uspešno ste uneli komentar";
+        
             }
 catch(PDOException $e)
     {
