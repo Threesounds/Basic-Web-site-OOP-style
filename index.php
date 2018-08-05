@@ -1,12 +1,11 @@
 <?php
     session_start();
     if(isset($_GET["id"])){    
-    $id1=$_GET["id"];
-    //$_GET["id1"]=Database::$connection->query("SELECT * FROM korisnici where id='$id1'");                    
+    $id1=$_GET["id"];                  
     }
 
     require "classes/config.php";
-    require "classes/user.php";;
+    
 ?>
 <!DOCTYPE html>
 <html>
