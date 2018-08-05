@@ -18,7 +18,8 @@
 <body>
 
 <div class="forma">
-    <h3>YOU MUST BE LOGGED IN TO SEE THE PAGE</h3>
+    <h3>PLEASE REGISTER TO BE ABLE TO LEAVE COMMENTS</h3>
+    <h3>РЕГИСТРУЈТЕ СЕ ДА БИСТЕ МОГЛИ ДА ОСТАВЉАТЕ КОМЕНТАРЕ</h3>
     <form action="#" method="post">
         <input type="text" name="username" onblur="validate(this)"  placeholder="Enter username"><br>
         <input type="password" name="password" onblur="validate(this)"  placeholder="Enter password"><br>
