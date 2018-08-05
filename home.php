@@ -1,12 +1,10 @@
 <?php
 session_start();
-
-
 if(!isset($_SESSION['username'])){
-	header('location:index.php');
+	echo '<a href="index.php">Улогујте се</a> да би оставили коментар';
+  
 }
 require_once"classes/config.php";
-require"user.php";
 ?>
 
 <!doctype html>
@@ -19,9 +17,11 @@ require"user.php";
 
 <body>
 
-<div class="">
-<h3>Добродошли <?php echo $_SESSION['username'] ; ?><a href="logout.php"> <strong>Logout</strong></a></h3>
-	
+<div><?php if(isset($_SESSION['username']))
+{ 
+  echo "<h3>Добродошли" ."&nbsp". $_SESSION['username']."&nbsp"."<a href=\"logout.php\"><strong>Logout</strong></a></h3>";
+}
+?>
 </div>
 <div id="wrap">
 <header id="header"><img  src="img/cropped-ZvanicniLogo.png" alt="" width="100" height="100" class="img1"/><h1>DOBRODOŠLI NA PREZENTACIJU GRADA PANČEVA</h1>
@@ -66,9 +66,15 @@ require"user.php";
 <footer id="footer"><p><a href="https://sr.wikipedia.org/sr/Панчево" title="Wikipedija" target="_blank" class="link">SAZNAJTE VIŠE</a></p></footer>
 
 <?php
-	require"add_comment.php";
-	$show->render_comments();
+if(isset($_SESSION['username']))
+{
+	include"add_comment.php";
+}
+$show->render_comments();
 ?>
+<script>
+                setInterval('document.getElementById("wrap")',2000);
+</script>
 </div>
 </body>
 </html>

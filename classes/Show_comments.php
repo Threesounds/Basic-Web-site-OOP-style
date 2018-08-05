@@ -10,16 +10,13 @@ class Show_comments
             <p id="test" on style="text-align: left; margin-left: 40px;margin-bottom:5px;padding: 10px; border: 1px solid #cfcfcf;">
                 <?php
                     echo "<b>" .$rw_com->comment_name ."</b>" . " commented | " .  $rw_com->comment;
-                     require "user.php";
-                    
+                    if(isset($_SESSION['user_id'])){
                         if ($_SESSION['user_id'] == $rw_com->login) {
-                            echo " <a href='classes/remove.php?id={$rw_com->id}'><i class='fa fa-times-circle'></i> Remove</a>";
+                            echo " <a href='classes/remove.php?id={$rw_com->id}'><i class='fa fa-times-circle'></i> Уклони коментар</a>";
                         }
+                    }
                 ?>
             </p> 
-            <script>
-                setInterval('document.getElementById("test")',2000);
-            </script>
             <?php  
         }
     }

@@ -5,16 +5,15 @@ class Login
     public function login_user() 
     {
         $username = $_POST['username'];
-        $password = md5($_POST['password']);
+        $password = $_POST['password'];
         try{
             Database::$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            Database::$connection->setAttribute(PDO::ATTR_EMULATE_PREPARES, TRUE);
-             $login_res = Database::$connection->prepare("SELECT * FROM korisnici");
-             $login_res->bindParam(":username", $username);
-             $login_res->bindParam(":password", $password);
-             $login_res->execute();
+        $login_res = Database::$connection->prepare("SELECT * FROM korisnici");
+        $login_res->bindParam(":username", $username);
+        $login_res->bindParam(":password", $password);
+        $login_res->execute();
         while ($rw_log = $login_res->fetchObject('Cookies')) {
-            if ($rw_log->username == $username && $rw_log->password == $password) {
+            if ($rw_log->username == $username && $rw_log->password == password_verify($_POST['password'], $rw_log->password)) {
                 $rw_log->setCookies();
                 header("Location:home.php?id=2");
             }
