@@ -1,5 +1,9 @@
 <?php
 session_start();
+session_regenerate_id();
+if(!isset($_GET['id'])){
+  header('Location:home.php?id=2');
+}
 if(!isset($_SESSION['username'])){
 	echo '<a href="index.php">Улогујте се</a> да би оставили коментар';
   
